@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+from sklearn.mixture import GaussianMixture
+data = pd.read_csv("C:\Users\Vaishnavi\Downloads\ML Programs (1)\ML Programs\Prog9_EM.csv")
+X = data.values
+num_clusters = 3
+gm = GaussianMixture(n_components=num_clusters)
+gm.fit(X)
+labels = gm.predict(X)
+print('Cluster Labels:',labels)
